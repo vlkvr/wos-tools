@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WOS Calc - Whiteout Survival Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Utility calculator website for the game Whiteout Survival with healing, armament competition, officer project and alliance showdown calculators" />
+    <script>
+      // GitHub Pages SPA redirect hack
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- This will be replaced with actual built assets during deployment -->
+    <script>
+      // Redirect to index.html to load the app
+      window.location.href = window.location.origin + window.location.pathname.replace('/404.html', '/');
+    </script>
+  </body>
+</html>
