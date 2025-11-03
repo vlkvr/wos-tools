@@ -5,6 +5,10 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# Даем GITHUB_TOKEN право писать в репозиторий
+permissions:
+  contents: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -20,11 +24,11 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # Запускаем Vite напрямую, чтобы --base не ушёл в esbuild
+      # Запускаем Vite напрямую, чтобы --base не попал в esbuild
       - name: Build site (Vite)
         run: npx vite build --base=/wos-tools/
 
-      # Публикуем собранные статические файлы из dist/public в ветку gh-pages
+      # Публикуем собранные статические файлы в ветку gh-pages
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
