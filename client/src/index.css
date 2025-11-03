@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(224 71.4% 4.1%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(224 71.4% 4.1%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(224 71.4% 4.1%);
+  --primary: hsl(221.2 83.2% 53.3%);
+  --primary-foreground: hsl(210 40% 98%);
+  --secondary: hsl(210 40% 96%);
+  --secondary-foreground: hsl(222.2 84% 4.9%);
+  --muted: hsl(210 40% 94%);
+  --muted-foreground: hsl(215.4 16.3% 46.9%);
+  --accent: hsl(210 40% 96%);
+  --accent-foreground: hsl(222.2 84% 4.9%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(214.3 31.8% 91.4%);
+  --input: hsl(214.3 31.8% 91.4%);
+  --ring: hsl(221.2 83.2% 53.3%);
+  --chart-1: hsl(12 76% 61%);
+  --chart-2: hsl(173 58% 39%);
+  --chart-3: hsl(197 37% 24%);
+  --chart-4: hsl(43 74% 66%);
+  --chart-5: hsl(27 87% 67%);
+  --radius: 0.5rem;
+  --wos-blue: hsl(221.2 83.2% 53.3%);
+  --wos-blue-dark: hsl(221.2 83.2% 45%);
+  --wos-gray-50: hsl(210 40% 98%);
+  --wos-gray-100: hsl(210 40% 96%);
+  --wos-gray-200: hsl(214.3 31.8% 91.4%);
+  --wos-gray-300: hsl(213 27.2% 84.1%);
+  --wos-gray-600: hsl(215.4 16.3% 46.9%);
+  --wos-gray-700: hsl(215.3 19.3% 34.5%);
+  --wos-gray-900: hsl(224 71.4% 4.1%);
+  --wos-total-expected: hsl(221.2 83.2% 53.3%);
+  
+  /* Game rarity colors */
+  --rarity-rare: hsl(217 91% 60%);
+  --rarity-epic: hsl(271 81% 56%);
+  --rarity-mythic: hsl(24 95% 53%);
+  --rarity-legendary: hsl(0 84% 60%);
+}
+
+.dark {
+  --background: hsl(224 71.4% 4.1%);
+  --foreground: hsl(210 40% 98%);
+  --card: hsl(224 71.4% 4.1%);
+  --card-foreground: hsl(210 40% 98%);
+  --popover: hsl(224 71.4% 4.1%);
+  --popover-foreground: hsl(210 40% 98%);
+  --primary: hsl(221.2 83.2% 53.3%);
+  --primary-foreground: hsl(210 40% 98%);
+  --secondary: hsl(215 27.8% 16.9%);
+  --secondary-foreground: hsl(210 40% 98%);
+  --muted: hsl(215 27.8% 20%);
+  --muted-foreground: hsl(217.9 10.6% 64.9%);
+  --accent: hsl(215 27.8% 16.9%);
+  --accent-foreground: hsl(210 40% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(215 27.8% 16.9%);
+  --input: hsl(215 27.8% 16.9%);
+  --ring: hsl(221.2 83.2% 53.3%);
+  --chart-1: hsl(220 70% 50%);
+  --chart-2: hsl(160 60% 45%);
+  --chart-3: hsl(30 80% 55%);
+  --chart-4: hsl(280 65% 60%);
+  --chart-5: hsl(340 75% 55%);
+  --wos-blue: hsl(221.2 83.2% 53.3%);
+  --wos-blue-dark: hsl(221.2 83.2% 45%);
+  --wos-gray-50: hsl(215 27.8% 25%);
+  --wos-gray-100: hsl(215 27.8% 25%);
+  --wos-gray-200: hsl(215 27.8% 25%);
+  --wos-gray-300: hsl(217.9 10.6% 64.9%);
+  --wos-gray-600: hsl(217.9 10.6% 64.9%);
+  --wos-gray-700: hsl(210 40% 98%);
+  --wos-gray-900: hsl(210 40% 98%);
+  --wos-total-expected: hsl(221.2 83.2% 53.3%);
+  
+  /* Game rarity colors - dark mode variations */
+  --rarity-rare: hsl(217 91% 70%);
+  --rarity-epic: hsl(271 81% 65%);
+  --rarity-mythic: hsl(24 95% 65%);
+  --rarity-legendary: hsl(0 84% 70%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-wos-blue {
+    color: var(--wos-blue);
+  }
+  .text-wos-blue-dark {
+    color: var(--wos-blue-dark);
+  }
+  .bg-wos-blue {
+    background-color: var(--wos-blue);
+  }
+  .bg-wos-blue-dark {
+    background-color: var(--wos-blue-dark);
+  }
+  .bg-wos-gray-50 {
+    background-color: var(--wos-gray-50);
+  }
+  .border-wos-gray-200 {
+    border-color: var(--wos-gray-200);
+  }
+  .text-total-expected {
+    color: var(--wos-total-expected);
+  }
+  
+  /* Rarity color classes */
+  .text-rarity-rare {
+    color: var(--rarity-rare);
+  }
+  .text-rarity-epic {
+    color: var(--rarity-epic);
+  }
+  .text-rarity-mythic {
+    color: var(--rarity-mythic);
+  }
+  .text-rarity-legendary {
+    color: var(--rarity-legendary);
+  }
+}
