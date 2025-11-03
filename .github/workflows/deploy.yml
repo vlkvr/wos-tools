@@ -20,9 +20,9 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # ВАЖНО: передаём base=/REPO_NAME/ для GitHub Pages
+      # Запускаем Vite напрямую, чтобы --base не ушёл в esbuild
       - name: Build site (Vite)
-        run: npm run build -- --base=/wos-tools/
+        run: npx vite build --base=/wos-tools/
 
       # Публикуем собранные статические файлы из dist/public в ветку gh-pages
       - name: Deploy to gh-pages
