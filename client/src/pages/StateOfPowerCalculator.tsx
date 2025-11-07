@@ -133,9 +133,9 @@ export default function StateOfPowerCalculator() {
           includePlanned: true,
         },
         stage5: {
-          goal: "380000",
+          goal: "250000",
           current: "",
-          remaining: 380000,
+          remaining: 250000,
           totalEarned: 0,
           inputs: {},
           includePlanned: true,
@@ -219,7 +219,7 @@ export default function StateOfPowerCalculator() {
       stage2: "270000",
       stage3: "300000",
       stage4: "300000",
-      stage5: "380000",
+      stage5: "250000",
     };
     
     updateStage(stageKey, { 
