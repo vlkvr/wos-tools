@@ -133,17 +133,17 @@ export default function AllianceShowdownCalculator() {
           includePlanned: true,
         },
         stage5: {
-          goal: "125000",
+          goal: "187500",
           current: "",
-          remaining: 125000,
+          remaining: 187500,
           totalEarned: 0,
           inputs: {},
           includePlanned: true,
         },
         stage6: {
-          goal: "125000",
+          goal: "187500",
           current: "",
-          remaining: 125000,
+          remaining: 187500,
           totalEarned: 0,
           inputs: {},
           includePlanned: true,
@@ -207,15 +207,20 @@ export default function AllianceShowdownCalculator() {
     });
   };
 
+  // Helper to get default goal per stage (fix for stages V–VI)
+  const getDefaultGoal = (stageKey: string): string =>
+    (stageKey === "stage5" || stageKey === "stage6") ? "187500" : "125000";
+
   const resetStage = (stageKey: string) => {
-    const defaultGoal = "125000";
+    const defaultGoal = getDefaultGoal(stageKey);
     
     const stageUpdates: Partial<StageState> = {
       goal: defaultGoal,
       current: "",
       inputs: {},
-      remaining: parseInt(defaultGoal),
+      remaining: parseInt(defaultGoal, 10),
       totalEarned: 0,
+      // includePlanned намеренно не трогаем — уважаем выбор пользователя
     };
     
     if (stageKey === "stage4") {
@@ -384,7 +389,7 @@ export default function AllianceShowdownCalculator() {
                       type="text"
                       value={stage.inputs[item.id] || ""}
                       onChange={(e) => updateItemInput(stageKey, item.id, e.target.value)}
-                      onPaste={(e) => handlePaste(e, stageKey, item.id)}
+                      onPaste={(e) => handlePaste(e, stageKey, itemId)}
                       data-testid={`input-${item.id}`}
                       className="w-full text-sm"
                       placeholder="e.g. 10 or 5*2+3"
